@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(delta):
 	if active:
 		
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(BUTTON_LEFT):
 			if finished == true:
 				load_dialogue()
 			else:
