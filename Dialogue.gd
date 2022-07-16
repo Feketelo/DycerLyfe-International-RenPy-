@@ -1,6 +1,6 @@
 extends Node
 
-var dialogue_1 = [
+var encounter_1 = [
 	{
 		"Text": "What do you want?",
 		"Choices": [
