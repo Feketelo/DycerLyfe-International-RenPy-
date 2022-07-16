@@ -18,6 +18,9 @@ position = Vector2( 514, 277 )
 [node name="Encounter1" type="Node" parent="."]
 script = ExtResource( 2 )
 
+[node name="Encounter2" type="Node" parent="."]
+script = ExtResource( 2 )
+
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0

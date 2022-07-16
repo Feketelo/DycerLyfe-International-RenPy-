@@ -34,7 +34,7 @@ func _physics_process(delta):
 				if current_round["choices"] and !buttons_visible:
 					display_buttons()
 				elif !current_round["choices"]:
-					set_current_round(dialogue_path[current_round]["goto"])
+					set_current_round(current_round["goto"])
 					play_round()
 			else:
 				# Display Full Text
