@@ -1,10 +1,8 @@
 extends Control
 
-onready var text = get_parent().get_node("Encounter1").encounter_1
 onready var dialogue_options = get_tree().get_nodes_in_group("dialogue_options")
 
 onready var StartScreen = get_parent().get_node("StartScreen")
-var dialogue_index = "round1"
 var current_round
 var buttons_visible = false
 onready var dialogue_path = get_parent().get_node("Encounter1").DialoguePath
@@ -56,10 +54,13 @@ func display_dialogue(words):
 	$TextBox/Tween.start()
 	
 func display_buttons():
-	var button_index = 0
+	var button_index = 1
+	var format_string = "choice%s"
 	for button in dialogue_options:
-		if button_index < text[dialogue_index]["Choices"].size():
-			button.text = text[dialogue_index]["Choices"][button_index]["Text"]
+		var choice_index = format_string % button_index
+		print_debug(choice_index)
+		if button_index < (current_round["choices"].size() + 1):
+			button.text = current_round["choices"][choice_index]["text"]
 		button_index += 1
 					
 	for button in dialogue_options:
@@ -86,48 +87,50 @@ func _on_Tween_tween_completed(object, key):
 
 func _on_Button_pressed():
 	StartScreen.hide()
+	active = true
+	set_current_round("round1")
 	play_round() 
 
 func _on_dialogue_option_1_pressed():
-	if $TextBox/dialogue_option_1.text == current_round["choices"]["choice_1"]["text"]:
-		success_chance = current_round["choices"]["choice_1"]["success_threshold"]
+	if $TextBox/dialogue_option_1.text == current_round["choices"]["choice1"]["text"]:
+		success_chance = current_round["choices"]["choice1"]["success_threshold"]
 		if calcSuccess(success_chance):
-			points += current_round["choices"]["choice_1"]["points"]
-			set_current_round(current_round["choices"]["choice_1"]["success_goto"])
+			points += current_round["choices"]["choice1"]["points"]
+			set_current_round(current_round["choices"]["choice1"]["success_goto"])
 		else:
-			points -= current_round["choices"]["choice_1"]["points"]
-			set_current_round(current_round["choices"]["choice_1"]["failure_goto"])
+			points -= current_round["choices"]["choice1"]["points"]
+			set_current_round(current_round["choices"]["choice1"]["failure_goto"])
 		play_round()
 
 func _on_dialogue_option_2_pressed():
-	if $TextBox/dialogue_option_2.text == current_round["choices"]["choice_2"]["text"]:
-		success_chance = current_round["choices"]["choice_2"]["success_threshold"]
+	if $TextBox/dialogue_option_2.text == current_round["choices"]["choice2"]["text"]:
+		success_chance = current_round["choices"]["choice2"]["success_threshold"]
 		if calcSuccess(success_chance):
-			points += current_round["choices"]["choice_2"]["points"]
-			set_current_round(current_round["choices"]["choice_2"]["success_goto"])
+			points += current_round["choices"]["choice2"]["points"]
+			set_current_round(current_round["choices"]["choice2"]["success_goto"])
 		else:
-			points -= current_round["choices"]["choice_2"]["points"]
-			set_current_round(current_round["choices"]["choice_2"]["failure_goto"])
+			points -= current_round["choices"]["choice2"]["points"]
+			set_current_round(current_round["choices"]["choice2"]["failure_goto"])
 		play_round()
 
 func _on_dialogue_option_3_pressed():
-	if $TextBox/dialogue_option_3.text == current_round["choices"]["choice_3"]["text"]:
-		success_chance = current_round["choices"]["choice_3"]["success_threshold"]
+	if $TextBox/dialogue_option_3.text == current_round["choices"]["choice3"]["text"]:
+		success_chance = current_round["choices"]["choice3"]["success_threshold"]
 		if calcSuccess(success_chance):
-			points += current_round["choices"]["choice_3"]["points"]
-			set_current_round(current_round["choices"]["choice_3"]["success_goto"])
+			points += current_round["choices"]["choice3"]["points"]
+			set_current_round(current_round["choices"]["choice3"]["success_goto"])
 		else:
-			points -= current_round["choices"]["choice_3"]["points"]
-			set_current_round(current_round["choices"]["choice_3"]["failure_goto"])
+			points -= current_round["choices"]["choice3"]["points"]
+			set_current_round(current_round["choices"]["choice3"]["failure_goto"])
 		play_round()
 
 func _on_dialogue_option_4_pressed():
-	if $TextBox/dialogue_option_4.text == current_round["choices"]["choice_4"]["text"]:
-		success_chance = current_round["choices"]["choice_4"]["success_threshold"]
+	if $TextBox/dialogue_option_4.text == current_round["choices"]["choice4"]["text"]:
+		success_chance = current_round["choices"]["choice4"]["success_threshold"]
 		if calcSuccess(success_chance):
-			points += current_round["choices"]["choice_4"]["points"]
-			set_current_round(current_round["choices"]["choice_4"]["success_goto"])
+			points += current_round["choices"]["choice4"]["points"]
+			set_current_round(current_round["choices"]["choice4"]["success_goto"])
 		else:
-			points -= current_round["choices"]["choice_4"]["points"]
-			set_current_round(current_round["choices"]["choice_4"]["failure_goto"])
+			points -= current_round["choices"]["choice4"]["points"]
+			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
 		play_round()
