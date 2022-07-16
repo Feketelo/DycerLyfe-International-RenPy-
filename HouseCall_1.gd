@@ -1,26 +1,35 @@
 extends Control
 
 onready var dialogue_options = get_tree().get_nodes_in_group("dialogue_options")
-
 onready var StartScreen = get_parent().get_node("StartScreen")
+onready var scene_index = 0 # increments before the first scene
+
 var current_round
 var buttons_visible = false
 onready var dialogue_path = get_parent().get_node("Encounter1").DialoguePath
-var next_index = 1
 var rng = RandomNumberGenerator.new()
 var finished # true if text is fully displayed
 var active
 var points = 0
 var success_chance
 
+
 func _ready():
 	#choose_scene()
 	pass
 
+func go_to_next_scene():
+	var encounter_format = "Encounter%s"
+	scene_index += 1
+	var encounter_string = encounter_format % scene_index
+	dialogue_path = get_parent().get_node(encounter_string).DialoguePath
+	active = true
+	set_current_round("round1")
+	play_round()
+
 func _physics_process(delta):
 	if active:
 		if Input.is_action_just_pressed("ui_accept"):
-			print_debug("space")
 			if finished == true:
 				if current_round["choices"] and !buttons_visible:
 					display_buttons()
@@ -39,10 +48,11 @@ func play_round():
 		display_dialogue(current_round["text"])
 	else:
 		print_debug("go to next scene")
-		# go_to_next_scene()
+		go_to_next_scene()
 
 func display_dialogue(words):
 	finished = false
+	print_debug('display dialogue')
 	$TextBox.visible = true
 	$TextBox/RichTextLabel.visible = true
 	$TextBox/RichTextLabel.bbcode_text = words
@@ -58,7 +68,6 @@ func display_buttons():
 	var format_string = "choice%s"
 	for button in dialogue_options:
 		var choice_index = format_string % button_index
-		print_debug(choice_index)
 		if button_index < (current_round["choices"].size() + 1):
 			button.text = current_round["choices"][choice_index]["text"]
 		button_index += 1
@@ -87,9 +96,7 @@ func _on_Tween_tween_completed(object, key):
 
 func _on_Button_pressed():
 	StartScreen.hide()
-	active = true
-	set_current_round("round1")
-	play_round() 
+	go_to_next_scene()
 
 func _on_dialogue_option_1_pressed():
 	if $TextBox/dialogue_option_1.text == current_round["choices"]["choice1"]["text"]:
