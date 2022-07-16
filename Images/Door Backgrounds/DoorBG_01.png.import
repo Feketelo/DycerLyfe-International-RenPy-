@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/humanoutlin.png-cfad55637a252d32e581a679fd3a6400.stex"
+path="res://.import/DoorBG_01.png-e40663a16297590aac9e1e905bae4c2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/humanoutlin.png"
-dest_files=[ "res://.import/humanoutlin.png-cfad55637a252d32e581a679fd3a6400.stex" ]
+source_file="res://Images/Door Backgrounds/DoorBG_01.png"
+dest_files=[ "res://.import/DoorBG_01.png-e40663a16297590aac9e1e905bae4c2e.stex" ]
 
 [params]
 
