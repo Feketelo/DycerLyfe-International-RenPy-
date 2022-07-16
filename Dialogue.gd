@@ -8,6 +8,7 @@ var DialoguePath = {
 				"text" : "Hello, how are you this evening?",
 				"success_threshold" : 100,
 				"success_goto": "round1_response1",
+				"failure_goto": "end",
 				"points": 0,
 			},
 			"choice2": {

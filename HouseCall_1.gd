@@ -89,7 +89,8 @@ func hide_buttons():
 		button.visible = false
 
 func calcSuccess(percent):
-	rng.randi_range(0,100) <= percent
+	rng.randomize()
+	return(rng.randi_range(0,100) <= percent)
 
 func _on_Tween_tween_completed(object, key):
 	finished = true
