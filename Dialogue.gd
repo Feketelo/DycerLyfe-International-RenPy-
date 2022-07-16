@@ -1,8 +1,13 @@
 extends Node
 
+
 var encounter_1 = [
-	{
+	{	# 0
+		"Type": "Text",
 		"Text": "What do you want?",
+	},
+	{	# 1
+		"Type": "Choices",
 		"Choices": [
 			{	"Text": "Hello, how are you this evening?",
 				"Success%": 100,
@@ -27,8 +32,13 @@ var encounter_1 = [
 			 }
 		]
 	},
-	{
+	{	# 2
+		"Type": "Text",
 		"Text": "What is it?",
+		"GoTo": 3
+	},
+	{	# 3
+		"Type": "Choices",
 		"Choices": [
 			{
 				"Text": "I'm here with the renowned dycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
@@ -36,50 +46,61 @@ var encounter_1 = [
 				"SuccessText": "But what can the Juicerator do for me?",
 				"FailureText": "DycerLyfe? I don't know about all that.",
 				"Points": 1,
-				"GoTo": 3
+				"GoTo": 4
 			},
 			{	"Text": "Let me demonstrate for you the juiceing power of the dycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
 				"Success%": 50,
 				"SuccessText": "That's some fresh-looking apple juice!",
 				"FailureText": "I'm allergic to apples.",
 				"Points": 2,
-				"GoTo": 4
+				"GoTo": 6
 			 },
 			 {	"Text": "Give me your shoe. I'm going to juice it. *Whirring noises*",
 				"Success%": 5,
 				"SuccessText": "I didn't know my shoe had so much juice!",
 				"FailureText": "I loved that shoe.",
 				"Points": 3,
-				"GoTo": 5
+				"GoTo": 8
 			 }
 		]
 	},
-	{
+	{	# 4
+		"Type": "Text",
 		"Text": "I'm just a fruit seller!",
+	},
+	{	# 5
+		"Type": "Choices",
 		"Choices": [
 			{
 				"Text": "Sounds like there are lots of delicious options for you then!",
 				"Success%": 75,
 				"SuccessText": "You're right!",
 				"FailureText": "I would NEVER eat my own fruit.",
-				"Points": 1
+				"Points": 1,
+				"GoTo": 10
 			},
 			{	"Text": "Have you thought about expanding your business into selling juices with those fruit?",
 				"Success%": 50,
 				"SuccessText": "That's a great idea!",
 				"FailureText": "After what happened to my brother? No way!",
 				"Points": 2,
+				"GoTo": 10
 			 },
 			{	"Text": "Would you like to resell a Juicerator at your business for 15% markup? I really need this sale.",
 				"Success%": 25,
 				"SuccessText": "Sure, that's a good deal for me.",
 				"FailureText": "That's the worst sales pitch I've ever heard.",
 				"Points": 3,
+				"GoTo": 10
 			}
 		]
 	},
-	{
+	{	# 6
+		"Type": "Text",
 		"Text": "What else can it juice?",
+	},
+	{	# 7
+		"Type": "Choices",
 		"Choices": [
 			{
 				"Text": "It can juice as many fruits as can fit in the Juiceration Chamber!",
@@ -102,43 +123,44 @@ var encounter_1 = [
 			}
 		]
 	},
-	{
-		"Text": "",
+	{	 # 8
+		"Type": "Text",
+		"Text": "...",
+	},
+	{	# 9
+		"Type": "Choices",
 		"Choices": [
 			{
 				"Text": "You'd be surprised how much juice you could find if you purchased the dycerLyfe International brand 5-in-1 Ultimate Juicerator!",
 				"Success%": 75,
 				"SuccessText": "Incredible! I can't wait to juice my pants.",
 				"FailureText": "I don't know how interested I am in other juices.",
-				"Points": 1
+				"Points": 1,
+				"GoTo": 10
 			},
 			{	"Text": "And I think that was the less juicy foot!",
 				"Success%": 50,
 				"SuccessText": "Oh, you flatter me!",
 				"FailureText": "I'm very sensitive about my juicy feet.",
 				"Points": 2,
+				"GoTo": 10
 			 },
 			{	"Text": "Now try drinking it.",
 				"Success%":5,
 				"SuccessText": "I can taste all the naturally occurring nutrients!",
 				"FailureText": "This tastes like shoe. And NOT in a good way.",
 				"Points": 3,
+				"GoTo": 10
 			}
 		]
-	}
-
+	},
 ]
 
-var success_dialogue = [
-	{
-		"Text": "I would absolutely love a juicer!",
-		"Choices": ["","","",""]
-	}
-]
+var success_text = {
+	"Text": "I would absolutely love a juicer!",
+}
 
-var failure_dialogue = [
-	{
-		"Text": "Get out!",
-		"Choices": ["","","",""]
-	}
-]
+var failure_text = {
+	"Text": "Get out!",
+}
+
