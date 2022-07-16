@@ -60,7 +60,7 @@ var DialoguePath = {
 				"text" : "I'm glad you asked! I'm here today with the DycerLyfe International brand 5-in-1 Ultimate Juicerator. Do you like juices?",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2"
+				"failure_goto": "round2_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -104,7 +104,7 @@ var DialoguePath = {
 		"text" : "Incredible! My problem with pizza is how solid it usually is.",
 		"choices" : null,
 		"goto": "round5"
-	}
+	},
 	"round2_response6" : {
 		"text" : "Was that my pizza?",
 		"choices" : null,
@@ -117,7 +117,7 @@ var DialoguePath = {
 				"text" : "How high the vitamin count is!",
 				"success_threshold" : 75,
 				"success_goto": "round3_response1",
-				"failure_goto": "round3_response2"
+				"failure_goto": "round3_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -174,7 +174,7 @@ var DialoguePath = {
 				"text" : "Absolutely, please try it.",
 				"success_threshold" : 75,
 				"success_goto": "round4_response1",
-				"failure_goto": "round4_response2"
+				"failure_goto": "round4_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -231,7 +231,7 @@ var DialoguePath = {
 				"text" : "Of course, it's only fair.",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
-				"failure_goto": "round5_response2"
+				"failure_goto": "round5_response2",
 				"points": 1,
 			},
 			"choice2": {
