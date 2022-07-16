@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Images/DefaultBackground.jpg" type="Texture" id=1]
+[ext_resource path="res://Images/Door Backgrounds/DefaultBackground.jpg" type="Texture" id=1]
 [ext_resource path="res://Dialogue.gd" type="Script" id=2]
-[ext_resource path="res://Images/humanoutlin.png" type="Texture" id=3]
+[ext_resource path="res://Images/Customer Models/humanoutlin.png" type="Texture" id=3]
 [ext_resource path="res://Controller.gd" type="Script" id=4]
 
 [node name="DycerLyfe" type="Node2D"]
