@@ -27,7 +27,7 @@ func go_to_next_scene():
 	set_current_round("round1")
 	play_round()
 
-func _physics_process(delta):
+func _process(delta):
 	if active:
 		if Input.is_action_just_pressed("ui_accept"):
 			if finished == true:
