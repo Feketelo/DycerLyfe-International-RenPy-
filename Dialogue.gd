@@ -56,14 +56,14 @@ var DialoguePath = {
 		"text" : "What is it?",
 		"choices" : {
 			"choice1": {
-				"text" : "I'm here with the renowned dycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
+				"text" : "I'm here with the renowned DycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
 				"failure_goto": "round2_response2",
 				"points": 1
 			},
 			"choice2": {
-				"text" : "Let me demonstrate for you the juiceing power of the dycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
+				"text" : "Let me demonstrate for you the juiceing power of the DycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
 				"success_threshold" : 50,
 				"success_goto": "round2_response3",
 				"failure_goto": "round2_response4",
@@ -226,7 +226,7 @@ var DialoguePath = {
 		"text" : "...",
 		"choices" : {
 			"choice1": {
-				"text" : "You'd be surprised how much juice you could find if you purchased the dycerLyfe International brand 5-in-1 Ultimate Juicerator!",
+				"text" : "You'd be surprised how much juice you could find if you purchased the DycerLyfe International brand 5-in-1 Ultimate Juicerator!",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
 				"failure_goto": "round5_response2",
