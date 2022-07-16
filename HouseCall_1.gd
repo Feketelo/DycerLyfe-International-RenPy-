@@ -27,14 +27,13 @@ func go_to_next_scene():
 	set_current_round("round1")
 	play_round()
 
-func _physics_process(delta):
+func _process(delta):
 	if active:
 		if Input.is_action_just_pressed("ui_accept"):
 			if finished == true:
 				if current_round["choices"] and !buttons_visible:
 					display_buttons()
 				elif !current_round["choices"]:
-					pause_mode = true
 					set_current_round(current_round["goto"])
 					play_round()
 			else:
@@ -90,7 +89,8 @@ func hide_buttons():
 		button.visible = false
 
 func calcSuccess(percent):
-	rng.randi_range(0,100) <= percent
+	rng.randomize()
+	return(rng.randi_range(0,100) <= percent)
 
 func _on_Tween_tween_completed(object, key):
 	finished = true
