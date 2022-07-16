@@ -126,7 +126,6 @@ var DialoguePath = {
 				"success_goto": "round3_response3",
 				"failure_goto": "round3_response4",
 				"points": 2,
-				
 			},
 			"choice3": {
 				"text" : "Would you like to resell a Juicerator at your business for 15% markup? I really need this sale.",
