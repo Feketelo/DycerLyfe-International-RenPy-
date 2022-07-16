@@ -2,12 +2,14 @@ extends Control
 
 onready var text = get_parent().get_node("Dialogue").dialogue_1
 onready var dialogue_options = get_tree().get_nodes_in_group("dialogue_options")
+onready var StartScreen = get_parent().get_node("StartScreen")
 var dialogue_index = 0
 var finished
 var active
 
 func _ready():
-	load_dialogue()
+	#load_dialogue()
+	pass
 
 func _physics_process(delta):
 	if active:
@@ -57,3 +59,10 @@ func load_dialogue():
 func _on_Tween_tween_completed(object, key):
 	finished = true
 		
+
+
+func _on_Button_pressed():
+	StartScreen.hide()
+	load_dialogue() # Replace with function body.
+
+ # Replace with function body.
