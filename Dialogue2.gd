@@ -1,5 +1,6 @@
 extends Node
 
+
 var DialoguePath = {
 	"round1" : {
 		"text" : "What do you want?",
@@ -59,8 +60,8 @@ var DialoguePath = {
 				"text" : "I'm here with the renowned dycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2",
-				"points": 1
+				"failure_goto": "round2_response2"
+				"points": 1,
 			},
 			"choice2": {
 				"text" : "Let me demonstrate for you the juiceing power of the dycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
@@ -103,7 +104,7 @@ var DialoguePath = {
 		"text" : "I didn't know my shoe had so much juice!",
 		"choices" : null,
 		"goto": "round5"
-	},
+	}
 	"round2_response6" : {
 		"text" : "I loved that shoe.",
 		"choices" : null,
