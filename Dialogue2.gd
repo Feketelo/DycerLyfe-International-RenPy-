@@ -140,32 +140,32 @@ var DialoguePath = {
 	"round3_response1": {
 		"text": "Now THAT sounds healthy!",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round3_response2": {
 		"text": "Isn't that the product the FDA labeled as combustably toxic?",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round3_response3": {
 		"text": "I'd say I need to get me some more juice!",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round3_response4": {
 		"text": "I'd say you're wrong and bad.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round3_response5": {
 		"text": "You're right! I hate Big Coffee and their lies!",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round3_response6": {
 		"text": "I've worked for Big Coffee all my life. I'll not hear such slander.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round4" : {
 		"text" : "But what if I have a competing product?",
@@ -197,32 +197,32 @@ var DialoguePath = {
 	"round4_response1": {
 		"text": "Five functions sure does sound like a lot.",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round4_response2": {
 		"text": "I believe my competing product has six functions, but go off.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round4_response3": {
 		"text": "That certainly is reassuring, this burn *gestures at scar on forearm* is from the last time my wife made juice.",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round4_response4": {
 		"text": "Why in the hell would a juicer need a no burn guarantee?",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round4_response5": {
 		"text": "YOU'RE RIGHT! *throws juicer in trash can*",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round4_response6": {
 		"text": "What? No? That was my anniversary gift for my cat.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round5" : {
 		"text" : "How much juice do you get out of it?",
@@ -254,31 +254,41 @@ var DialoguePath = {
 	"roun5_response1": {
 		"text": "Incredible! I can't wait to juice my pants.",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round5_response2": {
 		"text": "I don't know how interested I am in other juices.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round5_response3": {
 		"text": "Oh, you flatter me!",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round5_response4": {
 		"text": "I'm very sensitive about my juicy feet.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
 	},
 	"round5_response5": {
 		"text": "I can taste all the naturally occurring nutrients!",
 		"choices": null,
-		"goto": end
+		"goto": "success"
 	},
 	"round5_response6": {
 		"text": "This tastes like shoe. And NOT in a good way.",
 		"choices": null,
-		"goto": end
+		"goto": "failure"
+	},
+	"success": {
+		"text": "",
+		"choices": null,
+		"goto": "end"
+	},
+	"failure": {
+		"text": "",
+		"choices": null,
+		"goto": "end"
 	}
 }
