@@ -46,8 +46,7 @@ func play_round():
 		hide_buttons()
 		display_dialogue(current_round["text"])
 	else:
-		print_debug("go to next scene")
-		go_to_next_scene()
+		get_node("SwipeAnimation2").play("Intro_transition")
 
 func display_dialogue(words):
 	finished = false
@@ -144,4 +143,7 @@ func _on_dialogue_option_4_pressed():
 
 
 func _on_SwipeAnimation_animation_finished(anim_name):
-	go_to_next_scene() # Replace with function body.
+	go_to_next_scene()
+
+func _on_SwipeAnimation2_animation_finished(anim_name):
+	get_node("SwipeAnimation").play("Intro_transition")
