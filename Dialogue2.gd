@@ -251,7 +251,7 @@ var DialoguePath = {
 			},
 		}
 	},
-	"roun5_response1": {
+	"round5_response1": {
 		"text": "Incredible! I can't wait to juice my pants.",
 		"choices": null,
 		"goto": "success"
