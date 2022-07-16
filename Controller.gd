@@ -13,7 +13,6 @@ var active
 var points = 0
 var success_chance
 
-
 func _ready():
 	#choose_scene()
 	pass
