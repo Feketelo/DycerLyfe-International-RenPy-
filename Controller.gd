@@ -41,9 +41,6 @@ var dice_sounds = [
 
 func _ready():
 	$BackgroundMusic.play()
-	pass
-	#Turn off looping ahh
-	#choose_scene()
 
 func go_to_next_scene():
 	var encounter_format = "Encounter%s"
