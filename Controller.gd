@@ -15,6 +15,24 @@ var active
 var points = 0
 var success_chance
 
+var characters = [
+	"res://Images/Customer_Models/Customer_Male_03b.png",
+	"res://Images/Customer_Models/Customer_Male_03a.png",
+	"res://Images/Customer_Models/Customer_Male_02c.png",
+	"res://Images/Customer_Models/Customer_Male_02b.png",
+	"res://Images/Customer_Models/Customer_Male_02a.png",
+	"res://Images/Customer_Models/Customer_Male_01c.png",
+	"res://Images/Customer_Models/Customer_Male_01b.png",
+	"res://Images/Customer_Models/Customer_Male_01a.png",
+	"res://Images/Customer_Models/Customer_Female_01a.png",
+	"res://Images/Customer_Models/Customer_Female_01b.png",
+	"res://Images/Customer_Models/Customer_Female_01c.png",
+	"res://Images/Customer_Models/Customer_Female_01d.png",
+	"res://Images/Customer_Models/Customer_Female_01e.png",
+	"res://Images/Customer_Models/Customer_Female_01f.png",
+	"res://Images/Customer_Models/Customer_Female_0ga.png"
+]
+
 func _ready():
 	#choose_scene()
 	pass
@@ -31,11 +49,9 @@ func go_to_next_scene():
 
 func set_background_and_portrait():
 	var background_image = encounter_node.background_image
-	var character_portrait = encounter_node.character_portrait
 	var background_texture = load(background_image)
-	var character_texture = load(character_portrait)
 	get_parent().get_node("Background").texture = background_texture
-	get_parent().get_node("Humanoutline").texture = character_texture
+	set_character_random()
 
 func _process(delta):
 	if active:
@@ -167,3 +183,10 @@ func _on_SwipeAnimation2_animation_finished(anim_name):
 	scene_index += 1
 	set_background_and_portrait()
 	get_node("SwipeAnimation").play("Intro_transition")
+
+func set_character_random():
+	rng.randomize()
+	var index = rng.randi_range(0,characters.size())
+	var character_texture = load(characters[index])
+	get_parent().get_node("Humanoutline").texture = character_texture
+	
