@@ -45,7 +45,6 @@ func _ready():
 func go_to_next_scene():
 	var encounter_format = "Encounter%s"
 	var encounter_string = encounter_format % scene_index
-	print_debug(encounter_string)
 	dialogue_path = get_parent().get_node(encounter_string).DialoguePath
 	encounter_node = get_parent().get_node(encounter_string)
 	active = true
@@ -57,6 +56,7 @@ func set_background_and_portrait():
 	var background_texture = load(background_image)
 	get_parent().get_node("Background").texture = background_texture
 	set_character_random()
+	$TextBox/RichTextLabel.clear()
 
 func _process(delta):
 	if active:
