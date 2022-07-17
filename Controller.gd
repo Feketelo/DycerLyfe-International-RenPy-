@@ -40,6 +40,7 @@ var dice_sounds = [
 ]
 
 func _ready():
+	pass
 	#Turn off looping ahh
 	#choose_scene()
 
