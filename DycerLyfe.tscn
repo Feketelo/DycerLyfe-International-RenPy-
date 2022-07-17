@@ -345,6 +345,7 @@ margin_bottom = 300.0
 text = "The End."
 
 [node name="CreditsScreen" type="ColorRect" parent="."]
+visible = false
 anchor_bottom = 1.0
 margin_left = 38.0
 margin_top = 30.0
