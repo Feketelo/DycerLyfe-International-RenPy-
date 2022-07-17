@@ -3,6 +3,7 @@ extends Control
 onready var dialogue_options = get_tree().get_nodes_in_group("dialogue_options")
 onready var StartScreen = get_parent().get_node("StartScreen")
 onready var scene_index = 0 # increments before the first scene
+onready var CreditsScreen = get_parent().get_node("CreditsScreen")
 
 var current_round
 var buttons_visible = false
@@ -141,3 +142,10 @@ func _on_dialogue_option_4_pressed():
 			points -= current_round["choices"]["choice4"]["points"]
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
 		play_round()
+
+func _on_CloseCreditsButton_pressed():
+	CreditsScreen.hide()
+
+
+func _on_ShowCredits_pressed():
+	CreditsScreen.show() 
