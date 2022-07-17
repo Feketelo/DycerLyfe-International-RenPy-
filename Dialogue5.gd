@@ -26,7 +26,7 @@ var DialoguePath = {
 				"failure_goto": "round1_response5",
 				"points": 2,
 			},
-			"choice4" {
+			"choice4": {
 				"text" : "Oh gosh, sorry, go back to sleep.",
 				"success_threshold" : 0,
 				"failure_goto": "failure",
