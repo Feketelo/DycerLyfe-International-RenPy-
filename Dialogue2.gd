@@ -1,6 +1,7 @@
 extends Node
 
-
+var character_portrait = "res://Images/Customer_Models/Customer_Male_01.png"
+var background_image = "res://Images/Door_Backgrounds/DoorBG_01.png"
 var DialoguePath = {
 	"round1" : {
 		"text" : "What do you want?",
@@ -60,7 +61,7 @@ var DialoguePath = {
 				"text" : "I'm here with the renowned dycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2"
+				"failure_goto": "round2_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -104,11 +105,11 @@ var DialoguePath = {
 		"text" : "I didn't know my shoe had so much juice!",
 		"choices" : null,
 		"goto": "round5"
-	}
+	},
 	"round2_response6" : {
 		"text" : "I loved that shoe.",
 		"choices" : null,
-		"goto": "round5"
+		"goto": "round5",
 	},
 	"round3" : {
 		"text" : "I've heard that juice is bad for you.",
@@ -117,7 +118,7 @@ var DialoguePath = {
 				"text" : "I understand the hesitation, and so does dycerLyfe International. That's why we're offering a bonus package of Jooster Booster with your purchase, today only!",
 				"success_threshold" : 75,
 				"success_goto": "round3_response1",
-				"failure_goto": "round3_response2"
+				"failure_goto": "round3_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -174,7 +175,7 @@ var DialoguePath = {
 				"text" : "I guarantee that your competing product can't hold a candle to the 5-in-1 Ultimate Juicerator's five incredible functions!",
 				"success_threshold" : 75,
 				"success_goto": "round4_response1",
-				"failure_goto": "round4_response2"
+				"failure_goto": "round4_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -231,7 +232,7 @@ var DialoguePath = {
 				"text" : "You'd be surprised how much juice you could find if you purchased the dycerLyfe International brand 5-in-1 Ultimate Juicerator!",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
-				"failure_goto": "round5_response2"
+				"failure_goto": "round5_response2",
 				"points": 1,
 			},
 			"choice2": {
