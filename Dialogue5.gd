@@ -185,7 +185,7 @@ var DialoguePath = {
 					"points": 1,
 				},
 				"choice2": {
-					"text" : "A state-of-the-art juicer that gets all those vitamins and turns them into a juice!",
+					"text" : "What if I told you that you could have all the vitamin-filled juice you want, whenever you want?",
 					"success_threshold" : 50,
 					"success_goto": "round3_response3",
 					"failure_goto": "round3_response4",
@@ -193,7 +193,7 @@ var DialoguePath = {
 					
 				},
 				"choice3": {
-					"text" : "An overpriced juicer.",
+					"text" : "Look, do you want this juicer?",
 					"success_threshold" : 25,
 					"success_goto": "round3_response5",
 					"failure_goto": "round3_response6",
@@ -202,47 +202,47 @@ var DialoguePath = {
 		}
 	},
 	"round4_response1": {
-		"text": "",
+		"text": "Oh yeah? That sounds neat.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response2": {
-		"text": "",
+		"text": "I'm not interested.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round4_response3": {
-		"text": "",
+		"text": "I'd tell you, yes please!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response4": {
-		"text": "",
+		"text": "I'd tell you, goodnight.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round4_response5": {
-		"text": "",
+		"text": "....",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response6": {
-		"text": "",
+		"text": "...",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5" : {
-		"text" : "",
+		"text" : "You got a lot of juice out of that banana!",
 		"choices" : {
 			"choice1": {
-				"text" : "",
+				"text" : "That's right, and you could juice all the bananas you want if you purchase the DycerLyfe International brand 5-in-1 Ultimate Juicerator",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
 				"failure_goto": "round5_response2"
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "",
+				"text" : "And that's only one of the many things the DycerLyfe International brand 5-in-1 Ultimate Juicerator can juice! It can even juice live animals!",
 				"success_threshold" : 50,
 				"success_goto": "round5_response3",
 				"failure_goto": "round5_response4",
@@ -250,8 +250,8 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "",
-				"success_threshold" : 5,
+				"text" : "Yes, now buy the juicer and go back to sleep",
+				"success_threshold" : 25,
 				"success_goto": "round5_response5",
 				"failure_goto": "round5_response6",
 				"points": 3,
@@ -259,32 +259,32 @@ var DialoguePath = {
 		}
 	},
 	"round5_response1": {
-		"text": "",
+		"text": "Well let me tell you, I want to juice many bananas!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response2": {
-		"text": "",
+		"text": "I think I prefer un-juiced bananas.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5_response3": {
-		"text": "",
+		"text": "Nice! I'd love some fresh fish juice.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response4": {
-		"text": "",
+		"text": "You nearly had me, but that's too weird for me.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5_response5": {
-		"text": "",
+		"text": "Whatever.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response6": {
-		"text": "",
+		"text": "I think I'll skip the first part.",
 		"choices": null,
 		"goto": "failure"
 	},
