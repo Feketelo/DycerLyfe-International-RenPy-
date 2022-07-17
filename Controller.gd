@@ -132,7 +132,6 @@ func _on_Button_pressed():
 	StartScreen.hide()
 	scene_index += 1
 	set_background_and_portrait()
-	play_dice_sound_random()
 	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
