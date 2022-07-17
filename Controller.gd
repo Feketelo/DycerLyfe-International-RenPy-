@@ -208,4 +208,3 @@ func play_dice_sound_random():
 	$DiceSound.stream = dice_sounds[index]
 	$DiceSound.stream.loop = false
 	$DiceSound.play()
-	
