@@ -338,6 +338,7 @@ margin_bottom = 761.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="Button2" type="Button" parent="EndScreen"]
+visible = false
 margin_left = 547.0
 margin_top = 453.0
 margin_right = 740.0
