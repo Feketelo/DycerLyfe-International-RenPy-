@@ -33,6 +33,12 @@ var characters = [
 	"res://Images/Customer_Models/Customer_Female_0ga.png"
 ]
 
+var dice_sounds = [
+	preload("res://Audio/Dice1.mp3"),
+	preload("res://Audio/Dice2.mp3"),
+	preload("res://Audio/Dice3.mp3")
+]
+
 func _ready():
 	#choose_scene()
 	pass
@@ -124,6 +130,7 @@ func _on_Button_pressed():
 	StartScreen.hide()
 	scene_index += 1
 	set_background_and_portrait()
+	play_dice_sound_random()
 	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
@@ -135,6 +142,7 @@ func _on_dialogue_option_1_pressed():
 		else:
 			points -= current_round["choices"]["choice1"]["points"]
 			set_current_round(current_round["choices"]["choice1"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_2_pressed():
@@ -146,6 +154,7 @@ func _on_dialogue_option_2_pressed():
 		else:
 			points -= current_round["choices"]["choice2"]["points"]
 			set_current_round(current_round["choices"]["choice2"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_3_pressed():
@@ -157,6 +166,7 @@ func _on_dialogue_option_3_pressed():
 		else:
 			points -= current_round["choices"]["choice3"]["points"]
 			set_current_round(current_round["choices"]["choice3"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_4_pressed():
@@ -168,6 +178,7 @@ func _on_dialogue_option_4_pressed():
 		else:
 			points -= current_round["choices"]["choice4"]["points"]
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_CloseCreditsButton_pressed():
@@ -186,7 +197,14 @@ func _on_SwipeAnimation2_animation_finished(anim_name):
 
 func set_character_random():
 	rng.randomize()
-	var index = rng.randi_range(0,characters.size())
+	var index = rng.randi_range(0,characters.size() - 1)
 	var character_texture = load(characters[index])
 	get_parent().get_node("Humanoutline").texture = character_texture
+
+func play_dice_sound_random():
+	rng.randomize()
+	var index = rng.randi_range(0,dice_sounds.size() - 1)
+	$DiceSound.stream = dice_sounds[index]
+	$DiceSound.stream.loop = false
+	$DiceSound.play()
 	
