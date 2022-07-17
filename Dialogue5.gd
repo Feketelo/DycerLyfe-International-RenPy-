@@ -27,7 +27,7 @@ var DialoguePath = {
 				"points": 2,
 			},
 			"choice4" {
-				"Oh gosh, sorry, go back to sleep.",
+				"text" : "Oh gosh, sorry, go back to sleep.",
 				"success_threshold" : 0,
 				"failure_goto": "failure",
 				"points": 3,
@@ -66,7 +66,7 @@ var DialoguePath = {
 				"text" : "I'm here with the DycerLyfe International brand 5-in-1 Ultimate Juicerator.",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2"
+				"failure_goto": "round2_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -123,7 +123,7 @@ var DialoguePath = {
 				"text" : "The 5-in-1 Ultimate Juicerator is a Juicerator, with 5 different major features!",
 				"success_threshold" : 75,
 				"success_goto": "round3_response1",
-				"failure_goto": "round3_response2"
+				"failure_goto": "round3_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -181,7 +181,7 @@ var DialoguePath = {
 					"text" : "I'm here with the 5-in-1 Ultimate Juicerator is a Juicerator, with 5 different major features!",
 					"success_threshold" : 75,
 					"success_goto": "round3_response1",
-					"failure_goto": "round3_response2"
+					"failure_goto": "round3_response2",
 					"points": 1,
 				},
 				"choice2": {
@@ -238,7 +238,7 @@ var DialoguePath = {
 				"text" : "That's right, and you could juice all the bananas you want if you purchase the DycerLyfe International brand 5-in-1 Ultimate Juicerator",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
-				"failure_goto": "round5_response2"
+				"failure_goto": "round5_response2",
 				"points": 1,
 			},
 			"choice2": {
