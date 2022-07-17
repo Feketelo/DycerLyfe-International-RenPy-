@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Images/Door_Backgrounds/DoorBG_01.png" type="Texture" id=1]
 [ext_resource path="res://Dialogue.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Controller.gd" type="Script" id=4]
 [ext_resource path="res://Dialogue3.gd" type="Script" id=5]
 [ext_resource path="res://Sounds/knock1.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Images/Customer_Models/Customer_Male_01.png" type="Texture" id=7]
 [ext_resource path="res://Dialogue2.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -124,11 +123,6 @@ texture = ExtResource( 1 )
 position = Vector2( 548, 286.75 )
 scale = Vector2( 0.679878, 0.632705 )
 texture = ExtResource( 3 )
-
-[node name="Humanoutline2" type="Sprite" parent="." groups=["customers"]]
-position = Vector2( 548, 286.75 )
-scale = Vector2( 0.679878, 0.632705 )
-texture = ExtResource( 7 )
 
 [node name="CharacterPosition" type="Position2D" parent="."]
 position = Vector2( 640, 300 )

@@ -1,6 +1,7 @@
 extends Node
 
-var background_image = "res://Images/Door_Backgrounds/DefaultBackground.jpg"
+var character_portrait = "res://Images/Customer_Models/Customer_Female_01.png"
+var background_image = "res://Images/Door_Backgrounds/DoorBG_01.png"
 var DialoguePath = {
 	"round1" : {
 		"text" : "Are you the pizza delivery?",

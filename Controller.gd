@@ -8,6 +8,7 @@ onready var CreditsScreen = get_parent().get_node("CreditsScreen")
 var current_round
 var buttons_visible = false
 onready var dialogue_path = get_parent().get_node("Encounter1").DialoguePath
+onready var encounter_node = get_parent().get_node("Encounter1")
 var rng = RandomNumberGenerator.new()
 var finished # true if text is fully displayed
 var active
@@ -20,18 +21,21 @@ func _ready():
 
 func go_to_next_scene():
 	var encounter_format = "Encounter%s"
-	scene_index += 1
 	var encounter_string = encounter_format % scene_index
+	print_debug(encounter_string)
 	dialogue_path = get_parent().get_node(encounter_string).DialoguePath
-	set_background(encounter_string)
+	encounter_node = get_parent().get_node(encounter_string)
 	active = true
 	set_current_round("round1")
 	play_round()
 
-func set_background(encounter_string):
-	var background_image = get_parent().get_node(encounter_string).background_image
-	var texture = load(background_image)
-	get_parent().get_node("Background").texture = texture
+func set_background_and_portrait():
+	var background_image = encounter_node.background_image
+	var character_portrait = encounter_node.character_portrait
+	var background_texture = load(background_image)
+	var character_texture = load(character_portrait)
+	get_parent().get_node("Background").texture = background_texture
+	get_parent().get_node("Humanoutline").texture = character_texture
 
 func _process(delta):
 	if active:
@@ -102,6 +106,8 @@ func _on_Tween_tween_completed(object, key):
 
 func _on_Button_pressed():
 	StartScreen.hide()
+	scene_index += 1
+	set_background_and_portrait()
 	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
@@ -151,7 +157,6 @@ func _on_dialogue_option_4_pressed():
 func _on_CloseCreditsButton_pressed():
 	CreditsScreen.hide()
 
-
 func _on_ShowCredits_pressed():
 	CreditsScreen.show() 
 
@@ -159,4 +164,6 @@ func _on_SwipeAnimation_animation_finished(anim_name):
 	go_to_next_scene()
 
 func _on_SwipeAnimation2_animation_finished(anim_name):
+	scene_index += 1
+	set_background_and_portrait()
 	get_node("SwipeAnimation").play("Intro_transition")
