@@ -221,6 +221,7 @@ func _on_SwipeAnimation_animation_finished(anim_name):
 func _on_SwipeAnimation2_animation_finished(anim_name):
 	scene_index += 1
 	if scene_index > 5:
+		get_parent().get_node("EndScreen/RichTextLabel3").bbcode_text = money_format % money
 		get_parent().get_node("EndScreen").show()
 		$SwipeAnimation2/ColorRect.hide()
 		get_node("SwipeAnimation/ColorRect").hide()
