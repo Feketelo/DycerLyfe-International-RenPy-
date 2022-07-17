@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Door Knock.mp3-4ea9ec05857f31e6f6c717af61db8f66.mp3str"
+
+[deps]
+
+source_file="res://Audio/SoundFX/Door Knock.mp3"
+dest_files=[ "res://.import/Door Knock.mp3-4ea9ec05857f31e6f6c717af61db8f66.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -34,9 +34,9 @@ var characters = [
 ]
 
 var dice_sounds = [
-	preload("res://Audio/Dice1.mp3"),
-	preload("res://Audio/Dice2.mp3"),
-	preload("res://Audio/Dice3.mp3")
+	preload("res://Audio/SoundFX/Dice1.mp3"),
+	preload("res://Audio/SoundFX/Dice2.mp3"),
+	preload("res://Audio/SoundFX/Dice3.mp3")
 ]
 
 func _ready():
