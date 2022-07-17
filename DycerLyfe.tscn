@@ -8,9 +8,9 @@
 [ext_resource path="res://Sounds/knock1.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Fonts/Montserrat-Medium.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Dialogue2.gd" type="Script" id=8]
-[ext_resource path="res://Audio/Dice1.mp3" type="AudioStream" id=9]
-[ext_resource path="res://Audio/Footsteps_Concrete.mp3" type="AudioStream" id=10]
-[ext_resource path="res://Audio/Door Opening_a.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Audio/SoundFX/Dice1.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Audio/SoundFX/Footsteps_Concrete.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Audio/SoundFX/Door Opening_a.mp3" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Intro_transition"
@@ -150,8 +150,8 @@ bg_color = Color( 0, 0, 0, 1 )
 [node name="DycerLyfe" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 645, 367 )
-scale = Vector2( 0.67, 0.67 )
+position = Vector2( 644, 360.9 )
+scale = Vector2( 0.711014, 0.681296 )
 texture = ExtResource( 1 )
 
 [node name="Humanoutline" type="Sprite" parent="." groups=["customers"]]

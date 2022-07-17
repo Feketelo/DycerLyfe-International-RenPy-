@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Neon Laser Horizon.mp3-7eff417dd8215dbe116bfbbd01da7636.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Neon Laser Horizon.mp3"
+dest_files=[ "res://.import/Neon Laser Horizon.mp3-7eff417dd8215dbe116bfbbd01da7636.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
