@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Images/Door_Backgrounds/DoorBG_01.png" type="Texture" id=1]
 [ext_resource path="res://Dialogue.gd" type="Script" id=2]
@@ -112,6 +112,9 @@ tracks/1/keys = {
 "values": [ null ]
 }
 
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+
 [node name="DycerLyfe" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -214,6 +217,7 @@ margin_left = -23.0
 margin_top = -16.0
 margin_right = 1322.0
 margin_bottom = 761.0
+custom_styles/panel = SubResource( 6 )
 
 [node name="Button" type="Button" parent="StartScreen"]
 margin_left = 549.0
