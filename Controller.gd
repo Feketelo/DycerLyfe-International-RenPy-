@@ -12,8 +12,11 @@ onready var encounter_node = get_parent().get_node("Encounter1")
 var rng = RandomNumberGenerator.new()
 var finished # true if text is fully displayed
 var active
-var points = 0
+var points = 0.0
 var success_chance
+var sale_success = false
+var money = 0.0
+var money_format = "$%s"
 
 var characters = [
 	"res://Images/Customer_Models/Customer_Male_03b.png",
@@ -30,7 +33,15 @@ var characters = [
 	"res://Images/Customer_Models/Customer_Female_01d.png",
 	"res://Images/Customer_Models/Customer_Female_01e.png",
 	"res://Images/Customer_Models/Customer_Female_01f.png",
-	"res://Images/Customer_Models/Customer_Female_0ga.png"
+	"res://Images/Customer_Models/Customer_Female_0g.png"
+]
+
+var backgrounds = [
+	"res://Images/Door_Backgrounds/DoorBG_01.png",
+	"res://Images/Door_Backgrounds/DoorBG_02.png",
+	"res://Images/Door_Backgrounds/DoorBG_03.png",
+	"res://Images/Door_Backgrounds/DoorBG_04.png",
+	"res://Images/Door_Backgrounds/DoorBG_05.png"
 ]
 
 var dice_sounds = [
@@ -53,9 +64,7 @@ func go_to_next_scene():
 	play_round()
 
 func set_background_and_portrait():
-	var background_image = encounter_node.background_image
-	var background_texture = load(background_image)
-	get_parent().get_node("Background").texture = background_texture
+	set_background_random()
 	set_character_random()
 
 func _process(delta):
@@ -72,12 +81,20 @@ func _process(delta):
 				$TextBox/Tween.stop_all()
 				$TextBox/RichTextLabel.percent_visible = 1
 				finished = true
-		
+
+func show_money_counter():
+	get_parent().get_node("CanvasLayer/ColorRect").show()
+func hide_money_counter():
+	get_parent().get_node("CanvasLayer/ColorRect").hide()
+
 func play_round():
 	if active == true:
 		hide_buttons()
 		display_dialogue(current_round["text"])
+		show_money_counter()
 	else:
+		points = 0
+		hide_money_counter()
 		get_node("SwipeAnimation2").play("Intro_transition")
 
 func display_dialogue(words):
@@ -110,6 +127,11 @@ func display_buttons():
 
 func set_current_round(goto):
 	if goto == "end":
+		if sale_success:
+			money = money + (points * 236.97)
+			play_dice_sound_random()
+			print_debug(money)
+			get_parent().get_node("CanvasLayer/ColorRect/Label").text = money_format % money
 		active = false
 	else:
 		current_round = dialogue_path[goto]
@@ -137,9 +159,11 @@ func _on_dialogue_option_1_pressed():
 		if calcSuccess(success_chance):
 			points += current_round["choices"]["choice1"]["points"]
 			set_current_round(current_round["choices"]["choice1"]["success_goto"])
+			sale_success = true
 		else:
 			points -= current_round["choices"]["choice1"]["points"]
 			set_current_round(current_round["choices"]["choice1"]["failure_goto"])
+			sale_success = false
 		play_dice_sound_random()
 		play_round()
 
@@ -149,9 +173,11 @@ func _on_dialogue_option_2_pressed():
 		if calcSuccess(success_chance):
 			points += current_round["choices"]["choice2"]["points"]
 			set_current_round(current_round["choices"]["choice2"]["success_goto"])
+			sale_success = true
 		else:
 			points -= current_round["choices"]["choice2"]["points"]
 			set_current_round(current_round["choices"]["choice2"]["failure_goto"])
+			sale_success = false
 		play_dice_sound_random()
 		play_round()
 
@@ -161,9 +187,11 @@ func _on_dialogue_option_3_pressed():
 		if calcSuccess(success_chance):
 			points += current_round["choices"]["choice3"]["points"]
 			set_current_round(current_round["choices"]["choice3"]["success_goto"])
+			sale_success = true
 		else:
 			points -= current_round["choices"]["choice3"]["points"]
 			set_current_round(current_round["choices"]["choice3"]["failure_goto"])
+			sale_success = false
 		play_dice_sound_random()
 		play_round()
 
@@ -173,9 +201,11 @@ func _on_dialogue_option_4_pressed():
 		if calcSuccess(success_chance):
 			points += current_round["choices"]["choice4"]["points"]
 			set_current_round(current_round["choices"]["choice4"]["success_goto"])
+			sale_success = true
 		else:
 			points -= current_round["choices"]["choice4"]["points"]
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
+			sale_success = false
 		play_dice_sound_random()
 		play_round()
 
@@ -195,9 +225,15 @@ func _on_SwipeAnimation2_animation_finished(anim_name):
 
 func set_character_random():
 	rng.randomize()
-	var index = rng.randi_range(0,characters.size() - 1)
+	var index = rng.randi_range(0,(characters.size()-1))
 	var character_texture = load(characters[index])
 	get_parent().get_node("Humanoutline").texture = character_texture
+
+func set_background_random():
+	rng.randomize()
+	var index = rng.randi_range(0,(backgrounds.size()-1))
+	var background = load(backgrounds[index])
+	get_parent().get_node("Background").texture = background
 
 func play_dice_sound_random():
 	rng.randomize()
