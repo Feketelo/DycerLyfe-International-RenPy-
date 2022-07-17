@@ -17,11 +17,8 @@
 [ext_resource path="res://DycerLyfe.gd" type="Script" id=15]
 [ext_resource path="res://Images/Icons/sound-off.png" type="Texture" id=16]
 [ext_resource path="res://TextureButton.gd" type="Script" id=17]
-<<<<<<< HEAD
 [ext_resource path="res://Dialogue4.gd" type="Script" id=18]
-=======
-[ext_resource path="res://Images/Icons/corp_logo.png" type="Texture" id=18]
->>>>>>> main
+[ext_resource path="res://Images/Icons/corp_logo.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Intro_transition"
