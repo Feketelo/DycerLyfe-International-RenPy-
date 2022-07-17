@@ -193,8 +193,13 @@ func _on_SwipeAnimation_animation_finished(anim_name):
 
 func _on_SwipeAnimation2_animation_finished(anim_name):
 	scene_index += 1
-	set_background_and_portrait()
-	get_node("SwipeAnimation").play("Intro_transition")
+	if scene_index > 3:
+		get_parent().get_node("EndScreen").show()
+		$SwipeAnimation2/ColorRect.hide()
+		get_node("SwipeAnimation/ColorRect").hide()
+	else:
+		set_background_and_portrait()
+		get_node("SwipeAnimation").play("Intro_transition")
 
 func set_character_random():
 	rng.randomize()

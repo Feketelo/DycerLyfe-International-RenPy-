@@ -280,6 +280,37 @@ margin_bottom = 655.0
 custom_fonts/font = ExtResource( 7 )
 text = "View Credits"
 
+[node name="EndScreen" type="Panel" parent="."]
+visible = false
+margin_left = -23.0
+margin_top = -16.0
+margin_right = 1322.0
+margin_bottom = 761.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Button" type="Button" parent="EndScreen"]
+margin_left = 547.0
+margin_top = 453.0
+margin_right = 740.0
+margin_bottom = 496.0
+custom_fonts/font = ExtResource( 7 )
+text = "Replay Game"
+
+[node name="ShowCredits" type="Button" parent="EndScreen"]
+margin_left = 546.0
+margin_top = 599.0
+margin_right = 741.0
+margin_bottom = 655.0
+custom_fonts/font = ExtResource( 7 )
+text = "View Credits"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen"]
+margin_left = 612.0
+margin_top = 282.0
+margin_right = 674.0
+margin_bottom = 300.0
+text = "The End."
+
 [node name="CreditsScreen" type="ColorRect" parent="."]
 visible = false
 anchor_bottom = 1.0
@@ -324,4 +355,6 @@ text = "Close Credits"
 [connection signal="animation_finished" from="Control/SwipeAnimation2" to="Control" method="_on_SwipeAnimation2_animation_finished"]
 [connection signal="pressed" from="StartScreen/Button" to="Control" method="_on_Button_pressed"]
 [connection signal="pressed" from="StartScreen/ShowCredits" to="Control" method="_on_ShowCredits_pressed"]
+[connection signal="pressed" from="EndScreen/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="EndScreen/ShowCredits" to="Control" method="_on_ShowCredits_pressed"]
 [connection signal="pressed" from="CreditsScreen/CloseCreditsButton" to="Control" method="_on_CloseCreditsButton_pressed"]
