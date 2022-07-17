@@ -1,5 +1,7 @@
 extends Node
 
+onready var character_portrait = get_parent().get_node("Humanoutline")
+var background_image = "res://Images/Door_Backgrounds/DefaultBackground.jpg"
 var DialoguePath = {
 	"round1" : {
 		"text" : "What do you want?",

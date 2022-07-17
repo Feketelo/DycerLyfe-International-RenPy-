@@ -23,9 +23,15 @@ func go_to_next_scene():
 	scene_index += 1
 	var encounter_string = encounter_format % scene_index
 	dialogue_path = get_parent().get_node(encounter_string).DialoguePath
+	set_background(encounter_string)
 	active = true
 	set_current_round("round1")
 	play_round()
+
+func set_background(encounter_string):
+	var background_image = get_parent().get_node(encounter_string).background_image
+	var texture = load(background_image)
+	get_parent().get_node("Background").texture = texture
 
 func _process(delta):
 	if active:
