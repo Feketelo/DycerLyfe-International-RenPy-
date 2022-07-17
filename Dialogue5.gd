@@ -177,20 +177,18 @@ var DialoguePath = {
 		"text" : "Why?",
 		"choices" : {
 			"choice1": {
-				"choice1": {
-					"text" : "I'm here with the 5-in-1 Ultimate Juicerator is a Juicerator, with 5 different major features!",
-					"success_threshold" : 75,
-					"success_goto": "round3_response1",
-					"failure_goto": "round3_response2",
-					"points": 1,
-				},
-				"choice2": {
-					"text" : "What if I told you that you could have all the vitamin-filled juice you want, whenever you want?",
-					"success_threshold" : 50,
-					"success_goto": "round3_response3",
-					"failure_goto": "round3_response4",
-					"points": 2,
-					
+				"text" : "I'm here with the 5-in-1 Ultimate Juicerator is a Juicerator, with 5 different major features!",
+				"success_threshold" : 75,
+				"success_goto": "round3_response1",
+				"failure_goto": "round3_response2",
+				"points": 1,
+			},
+			"choice2": {
+				"text" : "What if I told you that you could have all the vitamin-filled juice you want, whenever you want?",
+				"success_threshold" : 50,
+				"success_goto": "round3_response3",
+				"failure_goto": "round3_response4",
+				"points": 2,	
 				},
 				"choice3": {
 					"text" : "Look, do you want this juicer?",
