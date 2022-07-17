@@ -3,28 +3,62 @@ extends Control
 onready var dialogue_options = get_tree().get_nodes_in_group("dialogue_options")
 onready var StartScreen = get_parent().get_node("StartScreen")
 onready var scene_index = 0 # increments before the first scene
+onready var CreditsScreen = get_parent().get_node("CreditsScreen")
 
 var current_round
 var buttons_visible = false
 onready var dialogue_path = get_parent().get_node("Encounter1").DialoguePath
+onready var encounter_node = get_parent().get_node("Encounter1")
 var rng = RandomNumberGenerator.new()
 var finished # true if text is fully displayed
 var active
 var points = 0
 var success_chance
 
+var characters = [
+	"res://Images/Customer_Models/Customer_Male_03b.png",
+	"res://Images/Customer_Models/Customer_Male_03a.png",
+	"res://Images/Customer_Models/Customer_Male_02c.png",
+	"res://Images/Customer_Models/Customer_Male_02b.png",
+	"res://Images/Customer_Models/Customer_Male_02a.png",
+	"res://Images/Customer_Models/Customer_Male_01c.png",
+	"res://Images/Customer_Models/Customer_Male_01b.png",
+	"res://Images/Customer_Models/Customer_Male_01a.png",
+	"res://Images/Customer_Models/Customer_Female_01a.png",
+	"res://Images/Customer_Models/Customer_Female_01b.png",
+	"res://Images/Customer_Models/Customer_Female_01c.png",
+	"res://Images/Customer_Models/Customer_Female_01d.png",
+	"res://Images/Customer_Models/Customer_Female_01e.png",
+	"res://Images/Customer_Models/Customer_Female_01f.png",
+	"res://Images/Customer_Models/Customer_Female_0ga.png"
+]
+
+var dice_sounds = [
+	preload("res://Audio/Dice1.mp3"),
+	preload("res://Audio/Dice2.mp3"),
+	preload("res://Audio/Dice3.mp3")
+]
+
 func _ready():
-	#choose_scene()
 	pass
+	#Turn off looping ahh
+	#choose_scene()
 
 func go_to_next_scene():
 	var encounter_format = "Encounter%s"
-	scene_index += 1
 	var encounter_string = encounter_format % scene_index
+	print_debug(encounter_string)
 	dialogue_path = get_parent().get_node(encounter_string).DialoguePath
+	encounter_node = get_parent().get_node(encounter_string)
 	active = true
 	set_current_round("round1")
 	play_round()
+
+func set_background_and_portrait():
+	var background_image = encounter_node.background_image
+	var background_texture = load(background_image)
+	get_parent().get_node("Background").texture = background_texture
+	set_character_random()
 
 func _process(delta):
 	if active:
@@ -46,8 +80,7 @@ func play_round():
 		hide_buttons()
 		display_dialogue(current_round["text"])
 	else:
-		print_debug("go to next scene")
-		go_to_next_scene()
+		get_node("SwipeAnimation2").play("Intro_transition")
 
 func display_dialogue(words):
 	finished = false
@@ -96,7 +129,10 @@ func _on_Tween_tween_completed(object, key):
 
 func _on_Button_pressed():
 	StartScreen.hide()
-	go_to_next_scene()
+	scene_index += 1
+	set_background_and_portrait()
+	play_dice_sound_random()
+	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
 	if $TextBox/dialogue_option_1.text == current_round["choices"]["choice1"]["text"]:
@@ -107,6 +143,7 @@ func _on_dialogue_option_1_pressed():
 		else:
 			points -= current_round["choices"]["choice1"]["points"]
 			set_current_round(current_round["choices"]["choice1"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_2_pressed():
@@ -118,6 +155,7 @@ func _on_dialogue_option_2_pressed():
 		else:
 			points -= current_round["choices"]["choice2"]["points"]
 			set_current_round(current_round["choices"]["choice2"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_3_pressed():
@@ -129,6 +167,7 @@ func _on_dialogue_option_3_pressed():
 		else:
 			points -= current_round["choices"]["choice3"]["points"]
 			set_current_round(current_round["choices"]["choice3"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
 
 func _on_dialogue_option_4_pressed():
@@ -140,4 +179,33 @@ func _on_dialogue_option_4_pressed():
 		else:
 			points -= current_round["choices"]["choice4"]["points"]
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
+		play_dice_sound_random()
 		play_round()
+
+func _on_CloseCreditsButton_pressed():
+	CreditsScreen.hide()
+
+func _on_ShowCredits_pressed():
+	CreditsScreen.show() 
+
+func _on_SwipeAnimation_animation_finished(anim_name):
+	go_to_next_scene()
+
+func _on_SwipeAnimation2_animation_finished(anim_name):
+	scene_index += 1
+	set_background_and_portrait()
+	get_node("SwipeAnimation").play("Intro_transition")
+
+func set_character_random():
+	rng.randomize()
+	var index = rng.randi_range(0,characters.size() - 1)
+	var character_texture = load(characters[index])
+	get_parent().get_node("Humanoutline").texture = character_texture
+
+func play_dice_sound_random():
+	rng.randomize()
+	var index = rng.randi_range(0,dice_sounds.size() - 1)
+	$DiceSound.stream = dice_sounds[index]
+	$DiceSound.stream.loop = false
+	$DiceSound.play()
+	
