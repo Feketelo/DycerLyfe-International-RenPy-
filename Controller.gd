@@ -33,7 +33,7 @@ var characters = [
 	"res://Images/Customer_Models/Customer_Female_01d.png",
 	"res://Images/Customer_Models/Customer_Female_01e.png",
 	"res://Images/Customer_Models/Customer_Female_01f.png",
-	"res://Images/Customer_Models/Customer_Female_0g.png"
+	"res://Images/Customer_Models/Customer_Female_01g.png"
 ]
 
 var backgrounds = [
