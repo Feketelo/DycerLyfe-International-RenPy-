@@ -34,15 +34,13 @@ var characters = [
 ]
 
 var dice_sounds = [
-	preload("res://Audio/Dice1.mp3"),
-	preload("res://Audio/Dice2.mp3"),
-	preload("res://Audio/Dice3.mp3")
+	preload("res://Audio/SoundFX/Dice1.mp3"),
+	preload("res://Audio/SoundFX/Dice2.mp3"),
+	preload("res://Audio/SoundFX/Dice3.mp3")
 ]
 
 func _ready():
-	pass
-	#Turn off looping ahh
-	#choose_scene()
+	$BackgroundMusic.play()
 
 func go_to_next_scene():
 	var encounter_format = "Encounter%s"
@@ -131,7 +129,6 @@ func _on_Button_pressed():
 	StartScreen.hide()
 	scene_index += 1
 	set_background_and_portrait()
-	play_dice_sound_random()
 	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
@@ -213,4 +210,3 @@ func play_dice_sound_random():
 	$DiceSound.stream = dice_sounds[index]
 	$DiceSound.stream.loop = false
 	$DiceSound.play()
-	
