@@ -3,16 +3,16 @@ extends Node
 
 var DialoguePath = {
 	"round1" : {
-		"text" : "What do you want?",
+		"text" : "Are you the pizza delivery?",
 		"choices" : {
 			"choice1": {
-				"text" : "Hello, how are you this evening?",
+				"text" : "No, sorry. How are you this evening?",
 				"success_threshold" : 100,
 				"success_goto": "round1_response1",
 				"points": 0,
 			},
 			"choice2": {
-				"text" : "May I take a moment of your time?",
+				"text" : "I'm not, but I have something better than pizza if you're interested.",
 				"success_threshold" : 50,
 				"success_goto": "round1_response2",
 				"failure_goto": "round1_response3",
@@ -20,51 +20,51 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "Buy my juicer!",
-				"success_threshold" : 5,
+				"text" : "No, but I have your pizza and you'll need to get through me if you ever want to see it.",
+				"success_threshold" : 50,
 				"success_goto": "round1_response4",
 				"failure_goto": "round1_response5",
-				"points": 2,
+				"points": 0,
 			},
 		}
 	},
 	"round1_response1" : {
-		"text" : "I'm fine, thank you.",
+		"text" : "Uh, I guess I'm alright. Hungry.",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response2" : {
-		"text" : "Sure, I have a moment.",
+		"text" : "I am very interested.",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response3" : {
-		"text" : "Make it quick, I have dinner on the stove.",
+		"text" : "Nothing can dissuade me from my love of pizza, but go ahead.",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response4" : {
-		"text" : "Hell yeah, I am SO thirsty!",
+		"text" : "Please, I'll do anything for that pizza!",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response5" : {
-		"text" : "What? No!",
+		"text" : "If you harm even a single pepperoni on that pizza, you'll regret it deeply.",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round2" : {
-		"text" : "What is it?",
+		"text" : "Are you selling something?",
 		"choices" : {
 			"choice1": {
-				"text" : "I'm here with the renowned dycerLyfe International brand 5-in-1 Ultimate Juicerator. It has won 3 industry awards just this year!",
+				"text" : "I'm glad you asked! I'm here today with the DycerLyfe International brand 5-in-1 Ultimate Juicerator. Do you like juices?",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2"
+				"failure_goto": "round2_response2",
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "Let me demonstrate for you the juicing power of the dycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
+				"text" : "Let me demonstrate for you the juicing power of the DycerLyfe International brand 5-in-1 Ultimate Juicerator on this fresh apple.",
 				"success_threshold" : 50,
 				"success_goto": "round2_response3",
 				"failure_goto": "round2_response4",
@@ -72,8 +72,8 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "Give me your shoe. I'm going to juice it. *Whirring noises*",
-				"success_threshold" : 5,
+				"text" : "Watch me juice this pizza. *whirring noises*",
+				"success_threshold" : 25,
 				"success_goto": "round2_response5",
 				"failure_goto": "round2_response6",
 				"points": 3,
@@ -81,47 +81,47 @@ var DialoguePath = {
 		}
 	},
 	"round2_response1" : {
-		"text" : "But what can the Juicerator do for me?",
+		"text" : "Yeah, I like juices!",
 		"choices" : null,
 		"goto": "round3"
 	},
 	"round2_response2" : {
-		"text" : "DycerLyfe? I don't know about all that.",
+		"text" : "I'm honestly indifferent to juices.",
 		"choices" : null,
 		"goto": "round3"
 	},
 	"round2_response3" : {
-		"text" : "That's some fresh-looking apple juice!",
+		"text" : "Dang, that's some tasty looking juice.",
 		"choices" : null,
 		"goto": "round4"
 	},
 	"round2_response4" : {
-		"text" : "I'm allergic to apples.",
+		"text" : "That juice looks chunky, but I am honestly hungry enough to try it.",
 		"choices" : null,
 		"goto": "round4"
 	},
 	"round2_response5" : {
-		"text" : "I didn't know my shoe had so much juice!",
+		"text" : "Incredible! My problem with pizza is how solid it usually is.",
 		"choices" : null,
 		"goto": "round5"
-	}
+	},
 	"round2_response6" : {
-		"text" : "I loved that shoe.",
+		"text" : "Was that my pizza?",
 		"choices" : null,
 		"goto": "round5"
 	},
 	"round3" : {
-		"text" : "I've heard that juice is bad for you.",
+		"text" : "What's special about the Juicerator?",
 		"choices" : {
 			"choice1": {
-				"text" : "I understand the hesitation, and so does dycerLyfe International. That's why we're offering a bonus package of Jooster Booster with your purchase, today only!",
+				"text" : "How high the vitamin count is!",
 				"success_threshold" : 75,
 				"success_goto": "round3_response1",
-				"failure_goto": "round3_response2"
+				"failure_goto": "round3_response2",
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "But what if I told you that juice is actually quite good for you!",
+				"text" : "How high the viscosity is!",
 				"success_threshold" : 50,
 				"success_goto": "round3_response3",
 				"failure_goto": "round3_response4",
@@ -129,7 +129,7 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "That's just what Big Coffee wants you to believe!",
+				"text" : "How high the price is!",
 				"success_threshold" : 25,
 				"success_goto": "round3_response5",
 				"failure_goto": "round3_response6",
@@ -138,47 +138,47 @@ var DialoguePath = {
 		}
 	},
 	"round3_response1": {
-		"text": "Now THAT sounds healthy!",
+		"text": "Vitamins? I love vitamins.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response2": {
-		"text": "Isn't that the product the FDA labeled as combustably toxic?",
+		"text": "My doctor says that I need lower vitamin foods.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round3_response3": {
-		"text": "I'd say I need to get me some more juice!",
+		"text": "Mmm, I do love a viscous juice.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response4": {
-		"text": "I'd say you're wrong and bad.",
+		"text": "I'm sorry, I'm not really looking for viscious juices.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round3_response5": {
-		"text": "You're right! I hate Big Coffee and their lies!",
+		"text": "Oh! I definitely think that expensive things are better.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response6": {
-		"text": "I've worked for Big Coffee all my life. I'll not hear such slander.",
+		"text": "You understand why that was a bad sales pitch, right?",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round4" : {
-		"text" : "But what if I have a competing product?",
+		"text" : "Can I have a sip?",
 		"choices" : {
 			"choice1": {
-				"text" : "I guarantee that your competing product can't hold a candle to the 5-in-1 Ultimate Juicerator's five incredible functions!",
+				"text" : "Absolutely, please try it.",
 				"success_threshold" : 75,
 				"success_goto": "round4_response1",
-				"failure_goto": "round4_response2"
+				"failure_goto": "round4_response2",
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "Does your current juicer have a lifetime no burn guarantee? DycerLyfe stands behind their products with a lifetime, burn free guarantee.",
+				"text" : "Please, allow me to demonstrate how to properly drink this juice.",
 				"success_threshold" : 50,
 				"success_goto": "round4_response3",
 				"failure_goto": "round4_response4",
@@ -186,7 +186,7 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "Then throw that garbage away! In the trash!",
+				"text" : "No.",
 				"success_threshold" : 25,
 				"success_goto": "round4_response5",
 				"failure_goto": "round4_response6",
@@ -195,47 +195,47 @@ var DialoguePath = {
 		}
 	},
 	"round4_response1": {
-		"text": "Five functions sure does sound like a lot.",
+		"text": "Wow! This is delicious and has made me forget all about pizza.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response2": {
-		"text": "I believe my competing product has six functions, but go off.",
+		"text": "Why does this taste like a shoe?",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round4_response3": {
-		"text": "That certainly is reassuring, this burn *gestures at scar on forearm* is from the last time my wife made juice.",
+		"text": "Somehow watching you drink it is refreshing me!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response4": {
-		"text": "Why in the hell would a juicer need a no burn guarantee?",
+		"text": "That's just cruel. I'm so hungry.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round4_response5": {
-		"text": "YOU'RE RIGHT! *throws juicer in trash can*",
+		"text": "Oh, dang. Guess I'll have to buy a Juicerator if I want some juice.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round4_response6": {
-		"text": "What? No? That was my anniversary gift for my cat.",
+		"text": "Okay, jerk.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5" : {
-		"text" : "How much juice do you get out of it?",
+		"text" : "You have to give me that pizza juice.",
 		"choices" : {
 			"choice1": {
-				"text" : "You'd be surprised how much juice you could find if you purchased the dycerLyfe International brand 5-in-1 Ultimate Juicerator!",
+				"text" : "Of course, it's only fair.",
 				"success_threshold" : 75,
 				"success_goto": "round5_response1",
-				"failure_goto": "round5_response2"
+				"failure_goto": "round5_response2",
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "And I think that was the less juicy foot!",
+				"text" : "No I don't.",
 				"success_threshold" : 50,
 				"success_goto": "round5_response3",
 				"failure_goto": "round5_response4",
@@ -243,7 +243,7 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "Now try drinking it.",
+				"text" : "Not until you buy a DycerLyfe International brand 5-in-1 Ultimate Juicerator.",
 				"success_threshold" : 5,
 				"success_goto": "round5_response5",
 				"failure_goto": "round5_response6",
@@ -252,42 +252,42 @@ var DialoguePath = {
 		}
 	},
 	"round5_response1": {
-		"text": "Incredible! I can't wait to juice my pants.",
+		"text": "This has incredible umami flavor!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response2": {
-		"text": "I don't know how interested I am in other juices.",
+		"text": "This has taken everything I love about pizza and perverted it beyond all redemption. I hate you and now I also hate pizza.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5_response3": {
-		"text": "Oh, you flatter me!",
+		"text": "Dang, you're right!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response4": {
-		"text": "I'm very sensitive about my juicy feet.",
+		"text": "...",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5_response5": {
-		"text": "I can taste all the naturally occurring nutrients!",
+		"text": "Fine, you got me.",
 		"choices": null,
 		"goto": "success"
 	},
 	"round5_response6": {
-		"text": "This tastes like shoe. And NOT in a good way.",
+		"text": "I will never give in to you.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"success": {
-		"text": "Seems neat. I'll buy one.",
+		"text": "Okay, I'll take one.",
 		"choices": null,
 		"goto": "end"
 	},
 	"failure": {
-		"text": "Please leave.",
+		"text": "*slowly backs away*",
 		"choices": null,
 		"goto": "end"
 	}

@@ -47,8 +47,7 @@ func play_round():
 		hide_buttons()
 		display_dialogue(current_round["text"])
 	else:
-		print_debug("go to next scene")
-		go_to_next_scene()
+		get_node("SwipeAnimation2").play("Intro_transition")
 
 func display_dialogue(words):
 	finished = false
@@ -97,7 +96,7 @@ func _on_Tween_tween_completed(object, key):
 
 func _on_Button_pressed():
 	StartScreen.hide()
-	go_to_next_scene()
+	get_node("SwipeAnimation").play("Intro_transition")
 
 func _on_dialogue_option_1_pressed():
 	if $TextBox/dialogue_option_1.text == current_round["choices"]["choice1"]["text"]:
@@ -143,9 +142,18 @@ func _on_dialogue_option_4_pressed():
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
 		play_round()
 
+<<<<<<< HEAD
 func _on_CloseCreditsButton_pressed():
 	CreditsScreen.hide()
 
 
 func _on_ShowCredits_pressed():
 	CreditsScreen.show() 
+=======
+
+func _on_SwipeAnimation_animation_finished(anim_name):
+	go_to_next_scene()
+
+func _on_SwipeAnimation2_animation_finished(anim_name):
+	get_node("SwipeAnimation").play("Intro_transition")
+>>>>>>> main
