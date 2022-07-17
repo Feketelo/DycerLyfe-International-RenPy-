@@ -12,8 +12,8 @@ var DialoguePath = {
 				"points": 0,
 			},
 			"choice2": {
-				"text" : ".",
-				"success_threshold" : 50,
+				"text" : "",
+				"success_threshold" : 75,
 				"success_goto": "round1_response2",
 				"failure_goto": "round1_response3",
 				"points": 1,
@@ -104,7 +104,7 @@ var DialoguePath = {
 		"text" : "",
 		"choices" : null,
 		"goto": "round5"
-	}
+	},
 	"round2_response6" : {
 		"text" : "",
 		"choices" : null,

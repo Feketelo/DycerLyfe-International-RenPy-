@@ -3,24 +3,24 @@ extends Node
 
 var DialoguePath = {
 	"round1" : {
-		"text" : "",
+		"text" : "Hi there!",
 		"choices" : {
 			"choice1": {
-				"text" : "",
+				"text" : "Hello, how are you this evening?",
 				"success_threshold" : 100,
 				"success_goto": "round1_response1",
 				"points": 0,
 			},
 			"choice2": {
-				"text" : ".",
-				"success_threshold" : 50,
+				"text" : "That's the friendliest greeting I've had all night!",
+				"success_threshold" : 75,
 				"success_goto": "round1_response2",
 				"failure_goto": "round1_response3",
 				"points": 1,
 				
 			},
 			"choice3": {
-				"text" : "",
+				"text" : "Wait, are you trying to sell ME something?",
 				"success_threshold" : 50,
 				"success_goto": "round1_response4",
 				"failure_goto": "round1_response5",
@@ -29,99 +29,93 @@ var DialoguePath = {
 		}
 	},
 	"round1_response1" : {
-		"text" : "",
+		"text" : "I'm wonderful, thanks to all the fresh juice I'm drinking these days.",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response2" : {
-		"text" : "",
+		"text" : "Well you'd be just as friendly if you drank a tall glass of fresh juice!",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response3" : {
-		"text" : "",
+		"text" : "Maybe it's your face?",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response4" : {
-		"text" : "",
+		"text" : "Haha, that's so funny!",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round1_response5" : {
-		"text" : "",
+		"text" : "No?",
 		"choices" : null,
 		"goto": "round2"
 	},
 	"round2" : {
-		"text" : "",
+		"text" : "So, have you heard about all the wonderful features of the DycerLyfe International brand 5-in-1 Ultimate Juicerator?",
 		"choices" : {
 			"choice1": {
-				"text" : "",
+				"text" : "Oh, you already have one?",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
 				"failure_goto": "round2_response2"
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "",
+				"text" : "Please tell me about one of these features.",
 				"success_threshold" : 50,
 				"success_goto": "round2_response3",
 				"failure_goto": "round2_response4",
-				"points": 2,
+				"points": 1,
 				
 			},
 			"choice3": {
-				"text" : "",
-				"success_threshold" : 25,
+				"text" : "You couldn't tell me anything I don't already know.",
+				"success_threshold" : 100,
 				"success_goto": "round2_response5",
-				"failure_goto": "round2_response6",
-				"points": 3,
+				"points": 0,
 			},
 		}
 	},
 	"round2_response1" : {
-		"text" : "",
+		"text" : "I do and it has changed my life!",
 		"choices" : null,
 		"goto": "round3"
 	},
 	"round2_response2" : {
-		"text" : "",
+		"text" : "Ugh, so you're just here to sell me one?",
 		"choices" : null,
 		"goto": "round3"
 	},
 	"round2_response3" : {
-		"text" : "",
+		"text" : "The DycerLyfe International brand 5-in-1 Ultimate Juicerator can juice up to 3 different kinds of fruits at once!",
 		"choices" : null,
-		"goto": "round4"
+		"goto": "bad_end"
 	},
 	"round2_response4" : {
-		"text" : "",
+		"text" : "The DycerLyfe International brand 5-in-1 Ultimate Juicerator can tell your cellphone when it's done juicing!",
 		"choices" : null,
-		"goto": "round4"
+		"goto": "bad_end"
 	},
 	"round2_response5" : {
-		"text" : "",
-		"choices" : null,
-		"goto": "round5"
-	}
-	"round2_response6" : {
-		"text" : "",
+		"text" : "Sounds like we've got ourselves a trivia battle!",
 		"choices" : null,
 		"goto": "round5"
 	},
 	"round3" : {
-		"text" : "",
+		"text" : "Look, I respect what you're doing but I've already got a Juicerator.",
 		"choices" : {
 			"choice1": {
-				"text" : "",
-				"success_threshold" : 75,
+				"text" : "What will happen to you when it breaks?",
+				"success_threshold" : 50,
 				"success_goto": "round3_response1",
 				"failure_goto": "round3_response2"
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "",
+				"text" : "Just think about what you could accomplish with another Juicerator!",
 				"success_threshold" : 50,
 				"success_goto": "round3_response3",
 				"failure_goto": "round3_response4",
@@ -129,7 +123,7 @@ var DialoguePath = {
 				
 			},
 			"choice3": {
-				"text" : "",
+				"text" : "Have you thought about becoming a distributor? You just need a second one to get started.",
 				"success_threshold" : 25,
 				"success_goto": "round3_response5",
 				"failure_goto": "round3_response6",
@@ -138,156 +132,135 @@ var DialoguePath = {
 		}
 	},
 	"round3_response1": {
-		"text": "",
+		"text": "I wouldn't know what to do with myself!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response2": {
-		"text": "",
+		"text": "Didn't it come with a 50-year break-free guarantee?",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round3_response3": {
-		"text": "",
+		"text": "You're right! That's like 10 features instead of 5!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response4": {
-		"text": "",
+		"text": "But, I live alone.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round3_response5": {
-		"text": "",
+		"text": "That would really help me get out of debt from buying too many herbal supplements!",
 		"choices": null,
 		"goto": "success"
 	},
 	"round3_response6": {
-		"text": "",
-		"choices": null,
-		"goto": "failure"
-	},
-	"round4" : {
-		"text" : "",
-		"choices" : {
-			"choice1": {
-				"text" : "",
-				"success_threshold" : 75,
-				"success_goto": "round4_response1",
-				"failure_goto": "round4_response2"
-				"points": 1,
-			},
-			"choice2": {
-				"text" : "",
-				"success_threshold" : 50,
-				"success_goto": "round4_response3",
-				"failure_goto": "round4_response4",
-				"points": 2,
-				
-			},
-			"choice3": {
-				"text" : "",
-				"success_threshold" : 25,
-				"success_goto": "round4_response5",
-				"failure_goto": "round4_response6",
-				"points": 3,
-			},
-		}
-	},
-	"round4_response1": {
-		"text": "",
-		"choices": null,
-		"goto": "success"
-	},
-	"round4_response2": {
-		"text": "",
-		"choices": null,
-		"goto": "failure"
-	},
-	"round4_response3": {
-		"text": "",
-		"choices": null,
-		"goto": "success"
-	},
-	"round4_response4": {
-		"text": "",
-		"choices": null,
-		"goto": "failure"
-	},
-	"round4_response5": {
-		"text": "",
-		"choices": null,
-		"goto": "success"
-	},
-	"round4_response6": {
-		"text": "",
+		"text": "Sorry, I've already got a business selling monkey pictures.",
 		"choices": null,
 		"goto": "failure"
 	},
 	"round5" : {
-		"text" : "",
+		"text" : "How many fruits can the DycerLyfe International brand 5-in-1 Ultimate Juicerator juice at the same time?",
 		"choices" : {
 			"choice1": {
-				"text" : "",
-				"success_threshold" : 75,
+				"text" : "3",
+				"success_threshold" : 100,
 				"success_goto": "round5_response1",
-				"failure_goto": "round5_response2"
 				"points": 1,
 			},
 			"choice2": {
-				"text" : "",
-				"success_threshold" : 50,
+				"text" : "7",
+				"success_threshold" : 100,
 				"success_goto": "round5_response3",
-				"failure_goto": "round5_response4",
-				"points": 2,
+				"points": 1,
 				
 			},
 			"choice3": {
-				"text" : "",
-				"success_threshold" : 5,
+				"text" : "21",
+				"success_threshold" : 100,
 				"success_goto": "round5_response5",
-				"failure_goto": "round5_response6",
-				"points": 3,
+				"points": 1,
 			},
 		}
 	},
 	"round5_response1": {
-		"text": "",
+		"text": "Correct!",
 		"choices": null,
-		"goto": "success"
+		"goto": "round6"
 	},
 	"round5_response2": {
-		"text": "",
+		"text": "Incorrect!",
 		"choices": null,
-		"goto": "failure"
+		"goto": "trivia_end2"
 	},
 	"round5_response3": {
-		"text": "",
+		"text": "Incorrect!",
+		"choices": null,
+		"goto": "trivia_end2"
+	},
+	"round6" : {
+		"text" : "What can the DycerLyfe International brand 5-in-1 Ultimate Juicerator do when it's done juicing?",
+		"choices" : {
+			"choice1": {
+				"text" : "Emit a loud beep",
+				"success_threshold" : 100,
+				"success_goto": "round5_response1",
+				"points": 0,
+			},
+			"choice2": {
+				"text" : "Scream",
+				"success_threshold" : 100,
+				"success_goto": "round5_response2",
+				"points": 0,
+				
+			},
+			"choice3": {
+				"text" : "Tell your cellphone",
+				"success_threshold" : 100,
+				"success_goto": "round5_response3",
+				"points": 2,
+			},
+		}
+	},
+	"round6_response1": {
+		"text": "Incorrect!",
+		"choices": null,
+		"goto": "trivia_end2"
+	},
+	"round6_response2": {
+		"text": "Incorrect!",
+		"choices": null,
+		"goto": "trivia_end2"
+	},
+	"round6_response3": {
+		"text": "Correct!",
+		"choices": null,
+		"goto": "trivia_end1"
+	},
+	"trivia_end1": {
+		"text":"Gosh, this trivia battle made me thirsty for even more juice!",
 		"choices": null,
 		"goto": "success"
 	},
-	"round5_response4": {
-		"text": "",
+	"trivia_end2": {
+		"text":"Well that was fun, but I've already got a Juicerator.",
 		"choices": null,
 		"goto": "failure"
 	},
-	"round5_response5": {
-		"text": "",
-		"choices": null,
-		"goto": "success"
-	},
-	"round5_response6": {
-		"text": "",
+	"bad_end": {
+		"text":"Well, I can see you're selling Juicerators, so it's kind of weird that you asked me that.",
 		"choices": null,
 		"goto": "failure"
-	},
+	}
 	"success": {
-		"text": "",
+		"text": "I'd be happy to buy another one.",
 		"choices": null,
 		"goto": "end"
 	},
 	"failure": {
-		"text": "",
+		"text": "I don't think I need another one. Goodbye.",
 		"choices": null,
 		"goto": "end"
 	}
