@@ -220,7 +220,7 @@ func _on_SwipeAnimation_animation_finished(anim_name):
 
 func _on_SwipeAnimation2_animation_finished(anim_name):
 	scene_index += 1
-	if scene_index > 3:
+	if scene_index > 5:
 		get_parent().get_node("EndScreen").show()
 		$SwipeAnimation2/ColorRect.hide()
 		get_node("SwipeAnimation/ColorRect").hide()
@@ -246,3 +246,9 @@ func play_dice_sound_random():
 	$DiceSound.stream = dice_sounds[index]
 	$DiceSound.stream.loop = false
 	$DiceSound.play()
+
+
+func _on_Button2_pressed():
+	scene_index = 1
+	set_background_and_portrait()
+	get_node("SwipeAnimation").play("Intro_transition")# Replace with function body.
