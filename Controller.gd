@@ -142,18 +142,15 @@ func _on_dialogue_option_4_pressed():
 			set_current_round(current_round["choices"]["choice4"]["failure_goto"])
 		play_round()
 
-<<<<<<< HEAD
 func _on_CloseCreditsButton_pressed():
 	CreditsScreen.hide()
 
 
 func _on_ShowCredits_pressed():
 	CreditsScreen.show() 
-=======
 
 func _on_SwipeAnimation_animation_finished(anim_name):
 	go_to_next_scene()
 
 func _on_SwipeAnimation2_animation_finished(anim_name):
 	get_node("SwipeAnimation").play("Intro_transition")
->>>>>>> main
