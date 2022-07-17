@@ -60,7 +60,7 @@ var DialoguePath = {
 				"text" : "Oh, you already have one?",
 				"success_threshold" : 75,
 				"success_goto": "round2_response1",
-				"failure_goto": "round2_response2"
+				"failure_goto": "round2_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -111,7 +111,7 @@ var DialoguePath = {
 				"text" : "What will happen to you when it breaks?",
 				"success_threshold" : 50,
 				"success_goto": "round3_response1",
-				"failure_goto": "round3_response2"
+				"failure_goto": "round3_response2",
 				"points": 1,
 			},
 			"choice2": {
@@ -253,7 +253,7 @@ var DialoguePath = {
 		"text":"Well, I can see you're selling Juicerators, so it's kind of weird that you asked me that.",
 		"choices": null,
 		"goto": "failure"
-	}
+	},
 	"success": {
 		"text": "I'd be happy to buy another one.",
 		"choices": null,
