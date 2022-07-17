@@ -168,6 +168,12 @@ tracks/1/keys = {
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 1 )
 
+[sub_resource type="Theme" id=7]
+default_font = ExtResource( 7 )
+
+[sub_resource type="Theme" id=8]
+default_font = ExtResource( 7 )
+
 [node name="DycerLyfe" type="Node2D"]
 script = ExtResource( 15 )
 
@@ -311,6 +317,37 @@ margin_bottom = 655.0
 custom_fonts/font = ExtResource( 7 )
 text = "View Credits"
 
+[node name="EndScreen" type="Panel" parent="."]
+visible = false
+margin_left = -23.0
+margin_top = -16.0
+margin_right = 1322.0
+margin_bottom = 761.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Button" type="Button" parent="EndScreen"]
+margin_left = 547.0
+margin_top = 453.0
+margin_right = 740.0
+margin_bottom = 496.0
+custom_fonts/font = ExtResource( 7 )
+text = "Replay Game"
+
+[node name="ShowCredits" type="Button" parent="EndScreen"]
+margin_left = 546.0
+margin_top = 599.0
+margin_right = 741.0
+margin_bottom = 655.0
+custom_fonts/font = ExtResource( 7 )
+text = "View Credits"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen"]
+margin_left = 612.0
+margin_top = 282.0
+margin_right = 674.0
+margin_bottom = 300.0
+text = "The End."
+
 [node name="CreditsScreen" type="ColorRect" parent="."]
 visible = false
 anchor_bottom = 1.0
@@ -321,22 +358,74 @@ margin_bottom = 696.0
 color = Color( 0.145098, 0.145098, 0.164706, 1 )
 
 [node name="Label" type="Label" parent="CreditsScreen"]
-margin_left = 503.0
-margin_top = 101.0
-margin_right = 615.0
-margin_bottom = 145.0
+margin_left = 524.0
+margin_top = 52.0
+margin_right = 636.0
+margin_bottom = 96.0
 size_flags_horizontal = 0
+theme = SubResource( 7 )
 custom_colors/font_color = Color( 0.952941, 0.917647, 0.917647, 1 )
 custom_fonts/font = ExtResource( 7 )
-text = "Credits Page"
+text = "Credits"
 align = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CreditsScreen"]
 margin_left = 128.0
-margin_top = 50.0
+margin_top = 94.0
 margin_right = 1016.0
-margin_bottom = 521.0
+margin_bottom = 565.0
+theme = SubResource( 8 )
 custom_fonts/normal_font = ExtResource( 7 )
+text = "DycerLyfe International 
+
+Developed by
+
+Team Name
+
+Game Design and Art
+Michael Rappe 
+Cat Choy 
+
+Programming
+Naomi Sprague
+Sarah Sprague 
+Bobby Brace 
+
+Producing and Animation
+Naomi Sprague
+Sarah Sprague 
+Bobby Brace
+
+Project Manager 
+Cat Choy 
+
+Writing
+Bobby Brace 
+Cat Choy 
+
+Attributions 
+
+Sound Effects
+\"Door, Front, Closing, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+\"Door, Front, Opening, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+“Front Door” by InspectorJ from FreeSound.org
+“Knocking on the Door” by oldhiccup from freesound.org 
+“Knock on Door” by dj997 from freesound.org
+“Doorbell11.wav” by klangkonserve from freesound.org
+“Beethovens 5th.mp3”by mcmacca from freesound.org
+“Doorbell A” by kwahmah_02 from freesound.org
+“Dice Rolling on Table” by Flem0527 from freesound.org 
+“Dice Shaking in Hand” by Flem0527 from freesound.org 
+“Dice_06.wav” by dermotte from freesound.org
+
+Logo Font 
+“Momcake Font” by Rivian Art - rivianart.blogspot.com from fontspace.org
+
+
+Background Music
+\"Neon Laser Horizon\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+"
 
 [node name="CloseCreditsButton" type="Button" parent="CreditsScreen"]
 margin_left = 498.0
@@ -382,5 +471,7 @@ custom_fonts/font = ExtResource( 7 )
 [connection signal="animation_finished" from="Control/SwipeAnimation2" to="Control" method="_on_SwipeAnimation2_animation_finished"]
 [connection signal="pressed" from="StartScreen/Button" to="Control" method="_on_Button_pressed"]
 [connection signal="pressed" from="StartScreen/ShowCredits" to="Control" method="_on_ShowCredits_pressed"]
+[connection signal="pressed" from="EndScreen/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="EndScreen/ShowCredits" to="Control" method="_on_ShowCredits_pressed"]
 [connection signal="pressed" from="CreditsScreen/CloseCreditsButton" to="Control" method="_on_CloseCreditsButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/TextureButton" method="_on_TextureButton_pressed"]
